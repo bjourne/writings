@@ -262,6 +262,36 @@ The integrand is fortunately separable
   \iint\,f(x)g(y)Pr(x)Pr(y)\,dx\,dy &= \int\,f(x)Pr(x)\,dx\cdot\int\,g(y)Pr(y)\,dy\\
 \end{align}
 Which is the same as $E(f(x))E(g(y))$.
+\begin{prob}{2.10}
+  Use the relations from problem 2.9 to prove the following
+  relationship between the second moment around zero and the second
+  moment about the mean (variance):
+  \begin{equation}
+    E((x - \mu)^2) = E(x^2) - E(x)^2
+  \end{equation}
+\end{prob}
+Once one realises that $\mu = E(x)$, the solution becomes trivial
+\begin{equation}
+  E(x^2 + E(x)^2 - 2xE(x))
+\end{equation}
+Using the rules of addition yields
+\begin{equation}
+  E(x^2) + E(E(x)^2) - E(2xE(x))
+\end{equation}
+Rule of homogenity, applied to the last term
+\begin{equation}
+  E(x^2) + E(E(x)^2) - 2E(xE(x))
+\end{equation}
+We can factor out one $E(x)$ from each of the last two terms since
+$E(x)$ itself is a constant
+\begin{equation}
+  E(x^2) + E(x)E(E(x)) - 2E(x)E(x)
+\end{equation}
+Because $E(x)$ is a constant, $E(E(x)) = E(x)$
+\begin{equation}
+  E(x^2) + E(x)E(x) - 2E(x)E(x) = E(x^2) - E(x)^2
+\end{equation}
+The proof is done.
 \subsection{Chapter 3}
 \begin{prob}{3.1}
   Consider a variable $x$ which is Bernoulli distributed with
