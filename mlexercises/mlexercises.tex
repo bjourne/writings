@@ -354,10 +354,50 @@ Some more algebraic manipulation yields
 
 \subsection{Exam 2017-10-21}
 
-\subsubsection{Explain the following concepts:}
+\begin{prob}{A-1}
+  What is the goal of \textit{maximum a posteriori estimation}?
+\end{prob}
+The goal of maximum a posteriori estimation is to optimize the
+likelihood of the new observation in conjunction with a priori
+information.
 
-\paragraph{maximum a posteriori estimation}
+\begin{prob}{A-2}
+  What is the underlying assumption unique to a \textit{naive Bayes
+    classifier}?
+\end{prob}
+The underlying assumption is that all features are regarded as
+conditionally independent. The assumption can be expressed as
+\begin{equation}
+  P(Y = y, X = x) = P(X = x)P(Y = y)
+\end{equation}
+for any pair of features $X, Y$.
+\begin{prob}{A-3}
+  Consider a single toss of a fair coin. Regarding the uncertainty of
+  the outcome \{head, tail\}.
+\end{prob}
+One bit of data is enough to encode the outcome. Therefore the entropy
+is equal to one bit.
+\begin{prob}{A-4}
+  Which regression methods includes an additional shrinkage term?
+\end{prob}
+The two best known are ridge regression and the lasso.
+\begin{prob}{A-5}
+  What happens during \textit{training} in an artificial neural
+  network?
+\end{prob}
+Weights are adjusted to minimize the output error.
+\begin{prob}{A-6}
+  What is the consequence of using a kernel-function in a support
+  vector machine?
+\end{prob}
+Classification takes place in a ``virtual'' high-dimensional space.
+\begin{prob}{A-7}
+  What is one characteristic of Ensemble methods in machine learning?
+\end{prob}
+Weak models are trained and combined.
 
-What is it
+
+
+
 
 \end{document}
