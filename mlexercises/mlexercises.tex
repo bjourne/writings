@@ -323,8 +323,33 @@ the identities $E(x) = E(x^2) = \lambda$ and $E(k) = k$
   &= \lambda + \lambda^2 - 2\lambda\lambda\\
   &= \lambda - \lambda^2 = \lambda(1-\lambda)
 \end{align}
-
-
+\begin{prob}{3.2}
+  Calculate an expression for the mode (position of the peak) of the
+  beta distribution with $\alpha, \beta > 1$ in terms of the
+  parameters $\alpha$ and $\beta$.
+\end{prob}
+We seek the point at which the pdf of the beta distribution is at its
+greatest
+\begin{equation}
+  Pr(x) = \frac{1}{B(\alpha, \beta)}x^{\alpha - 1}(1 - x)^{\beta - 1}
+\end{equation}
+We derive it with respect to $x$. Because the beta function is
+constant we can just skip it
+\begin{equation}
+  \frac{d}{dx}\left(x^{\alpha - 1}(1 - x)^{\beta - 1}\right)
+\end{equation}
+Yielding the derivative
+\begin{equation}
+  (\alpha-1)x^{\alpha - 2}(1-x)^{\beta - 1} - x^{\alpha - 1}(\beta - 1)(1 - x)^{\beta - 1}
+\end{equation}
+To find the maximum, we just set it equal to 0 and calculate. Resulting in
+\begin{equation}
+  (\alpha - 1)(1 - x) = (\beta - 1)x
+\end{equation}
+Some more algebraic manipulation yields
+\begin{equation}
+  x = \frac{\alpha - 1}{\beta + \alpha - 2}
+\end{equation}
 \section{Exams}
 
 \subsection{Exam 2017-10-21}
