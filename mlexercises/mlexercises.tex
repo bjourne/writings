@@ -395,6 +395,62 @@ Classification takes place in a ``virtual'' high-dimensional space.
   What is one characteristic of Ensemble methods in machine learning?
 \end{prob}
 Weak models are trained and combined.
+\begin{prob}{A-8}
+  What is the main role of the principal component analysis (PCA) in
+  the \textit{Subspace Method} for classification?
+\end{prob}
+To compute a subspace that represents the training data distribution
+in each class.
+\begin{prob}{B-1}
+  Describe the following terms used in machine learning.
+\end{prob}
+\begin{description}[style=nextline]
+\item[Random forests]
+  An ensemble of decision trees.
+\item[RANSAC]
+  Robust method to fit a model to data with outliers.
+\item[Dropout]
+  An approach to train artificial neural networks.
+\item[$k$-means]
+  Clustering method based on centroids.
+\item[Curse of dimensionality]
+  Issues in data sparsity space.
+\item[Gini impurity] A measure of how often a randomly choosen element
+  from the set would be incorrectly labeled if it was randomly labeled
+  according to the distribution of labels in the subset. It can be
+  used as a measure of information gain or predictability when
+  creating a decision tree.
+\item[Expected maximization]
+  An iterative method to find maximum likelihood or maximum a
+  posteriori estimates where the model depends on unobserved latent
+  variables.
+\item[Projection length]
+  Similarity measure in the subspace method.
+\end{description}
+\begin{prob}{B-2}
+  Suppose you need to design an identity verification system based on
+  face recognition whose goal is to confirm or reject the identity
+  claimed by each users. The system is only supposed to work with a
+  close set of $N > 1$ individuals. Users are assumed to claim any of
+  the $N$ identities uniformly at random. Call $\alpha$ the
+  probability of false acceptance and $\beta$ the probability of false
+  rejection of the system.
+
+  \textbf{a)} What is the a priori probability that the claimed
+  identity is correct?
+
+  \textbf{b)} What are the conditions on $\alpha$ and $\beta$ to make
+  sure that the claimed identity is more likely to be correct if the
+  system accepts the user and more likely to be incorrect if the
+  system rejects the user?
+
+  \textbf{c)} What are the conditions on $\alpha$ and $\beta$ from the
+  previous point if you assume equal error rates?
+\end{prob}
+Because we have no information about the user the prior probability is
+$1/N$.
+\end{document}
+
 
 
 
