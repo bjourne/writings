@@ -2,6 +2,7 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[parfill]{parskip}
+\usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{titling}
@@ -42,6 +43,54 @@
   \LaTeX solutions to exercises in machine learning.
   \tableofcontents
 \end{titlingpage}
+
+\section{Pattern Recognition and Machine Learning}
+
+\subsection{Chapter 2}
+\begin{prob}{2.1}
+  Show that the Bernoulli distribution satisfies the following
+  properties
+  \begin{align}
+    \sum_{x = 0}^1Pr(x|\mu) &= 1\\
+    \mathbb{E}[x] &= \mu\\
+    \mathrm{var}[x] &= \mu(1 - \mu)
+  \end{align}
+  Show that the entropy of a Bernoulli distributed random variable is
+  given by
+  \begin{align}
+    \mathrm{H}[x] = -\mu\ln\mu - (1 - \mu)\ln(1 - \mu)
+  \end{align}
+\end{prob}
+First property
+\begin{align}
+  \sum_{x = 0}^1Pr(x|\mu) &= Pr(x = 0|\mu) + Pr(x = 1|\mu)
+  = 1 - \mu + \mu = 1
+\end{align}
+Second property
+\begin{align}
+  \mathbb{E}[x] = \sum_{x = 0}^1xPr(x) = 0\cdot(1 - \mu) + 1\cdot\mu = \mu
+\end{align}
+Third property
+\begin{align}
+  \mathrm{var}[x] &= E(x^2 + E(x)^2 - 2xE(x))\\
+  &= E(x^2) + E(E(x)^2) - E(2xE(x))\\
+  &= E(x^2) + E(E(x)^2) - 2E(xE(x))\\
+  &= E(x^2) + E(x)E(E(x)) - 2E(x)E(x)
+  &= E(x^2) - E(x)E(x)\\
+  &= \mu - \mu^2 = \mu(1 - \mu)
+\end{align}
+The entropy of a discreete random variable is given by
+\begin{equation}
+  \mathrm{H}[x] = -\sum_xPr(x)\ln\,Pr(x)
+\end{equation}
+So we just plugin the two x values into the sum
+\begin{equation}
+  -Pr(0)\ln\,Pr(0) - Pr(1)\ln\,Pr(1)
+\end{equation}
+Yielding
+\begin{equation}
+  -(1 - \mu)\ln(1 - \mu) - \mu\ln\mu
+\end{equation}
 
 \section{Introduction to Statistical Learning}
 
