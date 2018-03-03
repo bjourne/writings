@@ -496,8 +496,126 @@ in each class.
   \textbf{c)} What are the conditions on $\alpha$ and $\beta$ from the
   previous point if you assume equal error rates?
 \end{prob}
-Because we have no information about the user the prior probability is
-$1/N$.
+Call $C$ the event that the claimed identity matches the true
+identity. A priori, the probability that the claimed identity is
+correct is $Pr(C) = \frac{1}{N}$ and $Pr(\neg\,C) = 1 - Pr(C)$, where
+$N$ is the number of individuals.
+
+Let $V$ be the event that the system recognizes the identity, and
+$\neg\,V$ that it rejects it. Then we can specify the false positives
+and true negatives as follows
+\begin{align}
+  &P(V|\neg\,C) = \alpha \quad &P(\neg\,V|\neg\,C) = 1 - \alpha\\
+  &P(\neg\,V|C) = \beta \quad &P(V|C) = 1 - \beta
+\end{align}
+We want to ensure two things. First, that the probability that the
+identity is correct given that the system valides it, is higher than
+if it rejects it
+\begin{equation}
+  P(C|V) > P(\neg\,C|V)
+\end{equation}
+Using Bayes' rule, we can express the inequality with the
+probabilities given
+\begin{equation}
+  Pr(C|V) = \frac{Pr(V|C)Pr(C)}{Pr(V)}
+\end{equation}
+and
+\begin{equation}
+  Pr(\neg\,C|V) = \frac{Pr(V|\neg\,C)Pr(\neg\,C)}{Pr(V)}
+\end{equation}
+Factoring out the denominators and inserting in the original
+inequality yields
+\begin{equation}
+  Pr(V|C)Pr(C) > Pr(V|\neg\,C)Pr(\neg\,C)
+\end{equation}
+Then we resolve the probability functions
+\begin{equation}
+  (1-\beta)\frac{1}{N} > \alpha\left(1-\frac{1}{N}\right)
+\end{equation}
+After a bit of substituting and rearranging, we get
+\begin{equation}
+  (N - 1)\alpha + \beta < 1
+\end{equation}
+We perform the same process with the second constraint, that the
+probability that the identity is incorrect \textit{given} that the
+system rejects it, is higher than if it validates it.
+\begin{equation}
+  P(\neg\,C|\neg\,V) > P(C|\neg\,V)
+\end{equation}
+Bayes' rule yields
+\begin{equation}
+  Pr(\neg\,V|\neg\,C)Pr(\neg\,C) > Pr(\neg\,V|C)Pr(C)
+\end{equation}
+Insertion of probabilities
+\begin{equation}
+  (1-\alpha)\left(1 - \frac{1}{N}\right) < \beta\frac{1}{N}
+\end{equation}
+After a bit of algebraic manipulation, we arrive at
+\begin{equation}
+  (N - 1)\alpha + \beta < N - 1
+\end{equation}
+Because $N - 1 \geq 1$, the only constraint we have is $(N - 1)\alpha
++ \beta < 1$.
+
+Equal error rates means that $\alpha = \beta$ giving us the inequality
+\begin{equation}
+  \alpha = \beta < \frac{1}{N}
+\end{equation}
+
+\begin{prob}{B-3}
+  Figure 1 shows five data points on the real number line (x-axis)
+  denoted by the symbol $\times$ and two probability distribution
+  functions (PDFs) denoted by $d_1$ (continuous line) and $d_2$
+  (dashed line).
+
+  \textbf{a)} Which PDF fits the data set best according to the
+  likelihood criterion, assuming that the data is i.i.d.?
+
+  \textbf{b)} Assuming the shapes are all triangular and symmetric
+  around the center, how many parameters do you need to define $d_1$
+  and $d_2$ respectively? \textbf{Note:} $d_2$ can be considered as a
+  mixture of distributions in the form of $d_1$.
+\end{prob}
+The likelihood $\mathcal{L}(\mathcal{D})$ is an indication of how well
+a probability distribution (model) fits the data. If the data points
+are i.i.d., the likelihood of the data can be expressed as the product
+of the likelihood of the single points:
+\begin{equation}
+  \mathcal{L}_{d_j}(\mathcal{D}) = \prod_iPr(x_i|d_j)
+\end{equation}
+where $\mathcal{D}$ is the available data and $d_j$ a
+distribution. The likelihood of the set of points given $d_2$ can be
+calculated easily as
+\begin{align}
+  \mathcal{L}_{d_2}(\mathcal{D}) &= \prod_iPr(x_i|d_2)\\
+  &= Pr(-4)Pr(-2.5)Pr(0)Pr(1.5)Pr(4)\\
+  &= 0.2^5 = 0.00032
+\end{align}
+and for $d_1$
+\begin{align}
+  \mathcal{L}_{d_1}(\mathcal{D}) &= \prod_iPr(x_i|d_1)\\
+  &= Pr(-4)Pr(-2.5)Pr(0)Pr(1.5)Pr(4)\\
+  &= (0.2\cdot0.2)(0.5\cdot0.2)(1.0\cdot0.2)(0.7\cdot0.2)(0.2\cdot0.2)\\
+  &= 0.2^5(0.2\cdot0.5\cdot1.0\cdot0.7\cdot0.2)\\
+  &= 0.00000448
+\end{align}
+We see that $d_2$ fits the data best.
+
+To define the distribution $d_1$, we need just two parameters; $\mu$
+defining the center of the distribution (which coincides with the
+expected value and the mode of it), and a parameter related to
+spread. For simplicity, the second parameter could be the value of the
+PDF at the center: $\delta = Pr(\mu|d_1)$. Because the area below the
+distribution must equal to 1, the distribution is fully defined if we
+know $\mu$ and $\delta$.
+
+If we consider $d_2$ as a mixture of $N$ distributions in the form of
+$d_1$, we need $N\cdot2$ parameters (from $d_1$), plus $N$
+weights. Because the weights must sum to 1, only $N - 1$ weights are
+free parameters. In total we have $N\cdot2 + N - 1 = N\cdot3 - 1$
+parameters. From the figure, we see that $d_2$ is comprised of 10
+components, so the number of parameters would be 29 at most.
+
 \end{document}
 
 
